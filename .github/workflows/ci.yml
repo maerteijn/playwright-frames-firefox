@@ -1,0 +1,30 @@
+name: Playwright frames firefox behaviour
+env:
+  POSTGRES_DB: gorilla-forms
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+           python-version: '3.9'
+      - name: Install python dependencies and playwright
+        run: |
+          pip install -r requirements.txt
+          playwright install
+      - name: Run the tests with chromium
+        run: |
+          pytest -s --browser=chromium
+      - name: Run the tests with firefox
+        run: |
+          pytest -s --browser=firefox

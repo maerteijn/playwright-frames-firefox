@@ -1,5 +1,5 @@
 # playwright-frames-firefox
-A test repo to demonstrate some weird behaviour with iframes and the firefox browser
+A test repo to demonstrate some weird behaviour with iframes and the firefox browser. See https://github.com/microsoft/playwright/issues/7846 for the official issue.
 
 
 ## Introduction

@@ -24,7 +24,7 @@ jobs:
           playwright install
       - name: Run the tests with chromium
         run: |
-          pytest -s --browser=chromium
+          pytest -s --simplehttpserver-directory ./public test_frames.py --browser=chromium
       - name: Run the tests with firefox
         run: |
-          pytest -s --browser=firefox
+          pytest -s --simplehttpserver-directory ./public test_frames.py --browser=firefox
